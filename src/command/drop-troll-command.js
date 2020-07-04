@@ -16,9 +16,12 @@ class DropTrollCommand extends AbstractCommand {
         this.commandName = 'drop';
         this.cooldown = 300;
         this.trollEmote = trollEmote || '';
+        this.lastDropTime = null;
     }
 
     execute() {
+        this.lastDropTime = (new Date()).getTime() / 1000;
+
         let chance = Math.floor(Math.random() * 100);
         let message = '!drop';
         if (this.trollEmote) {
@@ -35,6 +38,22 @@ class DropTrollCommand extends AbstractCommand {
             this.comfyJs.Say(message);
             this.comfyJs.Say(message);
         }
+    }
+
+    /**
+     * Return the last time someone dropped.
+     *
+     * @return {null|Number}
+     */
+    getLastDropTime() {
+        return this.lastDropTime;
+    }
+
+    /**
+     * Set the last drop time to the current time.
+     */
+    setLastDropTime() {
+        this.lastDropTime = (new Date()).getTime() / 1000;
     }
 }
 

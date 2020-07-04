@@ -5,6 +5,7 @@ let DropTrollCommand = require('./command/drop-troll-command');
 let InstagramCommand = require('./command/instagram-command');
 let ShoutoutCommand = require('./command/shoutout-command');
 let SocialsCommand = require('./command/socials-command');
+let TimedDropCommand = require('./command/timed-drop-command');
 let TwitterCommand = require('./command/twitter-command');
 
 /**
@@ -52,6 +53,8 @@ class HwBot {
         this.commandRegistry.registerCommand(new ShoutoutCommand(this.comfyJs));
         this.commandRegistry.registerCommand(new SocialsCommand(this.commandRegistry));
         this.commandRegistry.registerCommand(new TwitterCommand(this.comfyJs, process.env.TWITTER));
+
+        this.commandRegistry.registerTimedCommand(new TimedDropCommand(this.comfyJs, this.commandRegistry));
     }
 }
 
