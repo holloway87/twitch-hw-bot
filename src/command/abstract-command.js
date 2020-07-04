@@ -51,6 +51,15 @@ class AbstractCommand {
     }
 
     /**
+     * Returns the cooldown.
+     *
+     * @return {number}
+     */
+    getCooldown() {
+        return this.cooldown;
+    }
+
+    /**
      * Executes the command.
      *
      * Sets the last execution time for cooldowns.

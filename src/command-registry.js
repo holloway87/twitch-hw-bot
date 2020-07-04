@@ -6,6 +6,7 @@
 class CommandRegistry {
     constructor() {
         this.commands = {};
+        this.timedCommands = {};
     }
 
     /**
@@ -31,12 +32,36 @@ class CommandRegistry {
     }
 
     /**
+     * Returns the given command if it exists.
+     *
+     * @param {string} name
+     * @return {null|AbstractCommand}
+     */
+    getCommand(name) {
+        if (!this.commands.hasOwnProperty(name)) {
+            return null;
+        }
+
+        return this.commands[name];
+    }
+
+    /**
      * Registers a command.
      *
      * @param {AbstractCommand} command
      */
     registerCommand(command) {
         this.commands[command.getCommandName()] = command;
+    }
+
+    /**
+     * Registers a timed command.
+     *
+     * @param {AbstractCommand} command
+     */
+    registerTimedCommand(command) {
+        this.timedCommands[command.getCommandName()] = command;
+        setInterval(command.execute.bind(command), command.getCooldown() * 1000);
     }
 }
 
