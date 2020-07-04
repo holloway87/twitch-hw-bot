@@ -3,6 +3,9 @@
 let AbstractCommand = require('./abstract-command');
 let DropTrollCommand = require('./drop-troll-command');
 
+/**
+ * Timed command to let the bot drop ~15 minutes after the last drop in chat.
+ */
 class TimedDropCommand extends AbstractCommand {
     constructor(comfyJs, commandRegistry) {
         super();
