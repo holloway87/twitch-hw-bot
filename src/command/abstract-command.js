@@ -91,7 +91,7 @@ class AbstractCommand {
             return false;
         }
 
-        return this.cooldown > this.lastExecuteTime - ((new Date()).getTime() * 1000);
+        return this.cooldown > this.lastExecuteTime - ((new Date()).getTime() / 1000);
     }
 
     /**
