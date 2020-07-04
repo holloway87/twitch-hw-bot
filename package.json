@@ -1,0 +1,20 @@
+{
+  "name": "twitch-hw-bot",
+  "version": "0.1.0",
+  "description": "Twitch Bot for holloway87",
+  "main": "index.js",
+  "scripts": {
+    "run": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "twitch",
+    "bot"
+  ],
+  "author": "Holloway <me@holloway-web.de>",
+  "license": "WTFPL",
+  "dependencies": {
+    "comfy.js": "^1.1.0",
+    "dotenv": "^8.2.0"
+  }
+}
