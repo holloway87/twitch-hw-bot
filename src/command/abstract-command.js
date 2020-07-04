@@ -59,6 +59,7 @@ class AbstractCommand {
         return this.cooldown;
     }
 
+    // noinspection JSUnusedLocalSymbols
     /**
      * Executes the command.
      *
