@@ -33,10 +33,6 @@ class DropTrollCommand extends AbstractCommand {
             this.setLastExecutionTime();
 
             this.comfyJs.Say(message);
-            this.comfyJs.Say(message);
-            this.comfyJs.Say(message);
-            this.comfyJs.Say(message);
-            this.comfyJs.Say(message);
         }
     }
 
